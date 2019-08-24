@@ -1,0 +1,23 @@
+body {
+    background-color: black;
+    background-image: url("../images/synthGif.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* font-family: 'Exo', sans-serif; */
+    font-family: 'Orbitron', sans-serif;
+}
+.header {
+ 
+    text-align: center;
+    margin: 10px 200px 10px 200px;
+    padding: 50px;
+    color: rgb(2, 200, 214)
+}
+
+.innerHead {
+    background-color: rgba(76, 17, 125, 0.6);
+    margin: 20px 150px;
+    padding: 100px;
+}
+
+
