@@ -1,23 +1,103 @@
 body {
     background-color: black;
-    background-image: url("../images/synthGif.gif");
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* font-family: 'Exo', sans-serif; */
     font-family: 'Orbitron', sans-serif;
 }
+.img{
+  height:947px;
+  background-image: url("../images/synthGif.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0 20px 0 20px
+}
 .header {
- 
+    height:947px;
     text-align: center;
-    margin: 10px 200px 10px 200px;
     padding: 50px;
     color: rgb(2, 200, 214)
 }
-
 .innerHead {
     background-color: rgba(76, 17, 125, 0.6);
-    margin: 20px 150px;
+    vertical-align: center;
     padding: 100px;
 }
 
+.one {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    margin: 20px;
+    display: inline-block;
+    background-color: rgba(76, 17, 125);
+}
+.two {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  margin: 20px;
+  display: inline-block;
+  background-color: rgba(76, 17, 125);
+}
+.three{
+  position: relative;
+  width: 75px;
+  height: 75px;
+  margin: 20px;
+  display: inline-block;
+  background-color: rgba(76, 17, 125);
+}
+.four {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  margin: 20px;
+  display: inline-block;
+  background-color: rgba(76, 17, 125);
+}
+
+/* CREATE COLUMBS */
+* {
+    box-sizing: border-box;
+  }
+  .row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+    justify-content: center; 
+
+  }
+  .column {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 4px;
+  }
+  
+
+
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 950px) {
+    .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+  } 
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 767px) {
+    .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+    .three{
+      visibility: hidden;   
+    }
+    .four {
+      visibility: hidden;   
+    }
+  }
 
