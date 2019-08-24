@@ -1,5 +1,5 @@
 anime({
-    targets: '.innerHead  ',
+    targets: '.innerHead',
     left: '240px',
     backgroundColor: 'rgba(76, 17, 125, 0.6);',
     borderRadius: ['50%', '0%'],
@@ -29,7 +29,7 @@ anime({
     loop: true,
     easing: 'linear'
   });
-  
+
   anime({
     targets: '.four',
     translateX: -250,

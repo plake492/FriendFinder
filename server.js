@@ -1,15 +1,31 @@
-const http = require("http");
-const fs = require("fs");
-const PORT = 8080;
-const server = http.createServer(handleRequest);
-function handleRequest(req, res) {
+// Dependencies
+//=============================================================
+const express = require("express");
+const path = require("path");
+//=============================================================
 
-  fs.readFile(__dirname + "/index.html", function(err, data) {
-    res.writeHead(200, { "Content-Type": "text/html" });
-    res.end(data);
-  });
-}
+// Sets up the Express App
+// =============================================================
+const app = express();
+const PORT = process.env.PORT || 8080;
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// =============================================================
 
-server.listen(PORT, function() {
+// People DATA
+// =============================================================
+const people = [
+  {
+    routeName: "patricklake"
+  }
+]
+
+
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.listen(PORT, function() {
   console.log("Server is listening on PORT:http://localhost:" + PORT);
 });
