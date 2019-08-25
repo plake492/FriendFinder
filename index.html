@@ -6,10 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Exo|Orbitron&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/main.css">
-
     <title>Welcome to the Thunder Dome </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-<style>
+
+<!-- <style>
   body {
     background-color: black;
     font-family: 'Orbitron', sans-serif;
@@ -87,8 +90,6 @@
     padding: 0 4px;
   }
   
-
-
   /* Responsive layout - makes a two column-layout instead of four columns */
   @media screen and (max-width: 950px) {
     .column {
@@ -112,7 +113,7 @@
       visibility: hidden;   
     }
   }
-</style>
+</style> -->
 
 </head>
 <body>
@@ -124,12 +125,12 @@
         <hr>
         <p>Before you enter, tell us about yourself.</p> 
         <p>Speak the truth or you may be matched with a far greater enemy</p>
-        <button>Take the test then enter the DOME!</button>
+        <a href="#two"><button type="submit">Take the test then enter the DOME!</button></a>
     </div>
 
     <div class="row" id="box">
         <div class="column">
-            <div class="row">
+            <div class="row">`
                 <div class="one"></div>
             </div>
             <div class="row">
@@ -159,13 +160,115 @@
     </div>
 </header>
 
-    <div class="img"></div>
+<div id="two" class="img"></div>
 
-    <h6><a href="">Show The Fighters</a></h6>
+<div class="surveySection">
+    <div class="surveyForm">
+        <form method="POST" role="form">
+            <div>
+                <label for="answer" class="formLabel">Name</label>
+                <input type="text" class="questions" id="name">
+            <div>
+            <div>
+                <label for="answer" class="formLabel">Question 1</label>
+                <input type="text" class="questions" id="q1">
+            </div>
+            <!-- <div>
+                <label for="answer" class="formLabel">Question 2</label>
+                <input type="text" class="questions" id="q2">
+            </div>
+            <div>
+                <label for="answer" class="formLabel">Question 3</label>
+                <input type="text" class="questions" id="q3">
+            </div>
+            <div>
+                <label for="answer" class="formLabel">Question 4</label>
+                <input type="text" class="questions" id="q4">
+            </div>
+            <div>
+                <label for="answer" class="formLabel">Question 5</label>
+                <input type="text" class="questions" id="q5">
+            </div> -->
+        </form>
+        <br>
+        <div>
+            <button type="submit" id="add">Enter The Dome</button>
+        </div>
+    </div>
+</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
-    <script src="assets/scripts/anime.js"></script> 
-    <script>anime({
+<h6><a href="">Show The Fighters</a></h6>
+
+<script src="assets/scripts/anime.js"></script>  
+<!--Make Smooth Scroll-->
+<script type="text/javascript">
+        // Select all links with hashes
+    $('a[href*="#"]')
+    // Remove links that don't actually link to anything
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function(event) {
+      // On-page links
+      if (
+        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+        && 
+        location.hostname == this.hostname
+      ) {
+        // Figure out element to scroll to
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        // Does a scroll target exist?
+        if (target.length) {
+          // Only prevent default if animation is actually gonna happen
+          event.preventDefault();
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000, function() {
+            // Callback after animation
+            // Must change focus!
+            var $target = $(target);
+            $target.focus();
+            if ($target.is(":focus")) { // Checking if the target was focused
+              return false;
+            } else {
+              $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+              $target.focus(); // Set focus again
+            };
+          });
+        }
+      }
+    })
+</script>
+<!--Connect to Server-->
+<script type="text/javascript">
+    
+    $("#add").on("click", function(event) {
+      event.preventDefault();
+      let newPerson = {
+        name: "bob",
+        q1: 2
+          // name:$("#name").val().trim(),
+          // q1: $("#q1").val().trim(),
+          // q2: $("#q2").val().trim(),
+          // q3: $("#q3").val().trim(),
+          // q4: $("#q4").val().trim(),
+          // q5: $("#q5").val().trim(),
+          // attack: 1000,
+          // defense: 5555
+        } ;
+        console.log(newPerson)
+
+      $.post("/api/people", newPerson)
+        .then(function(data) {
+          console.log("add.html", data);
+          alert("Adding character...");
+        });
+    });
+
+</script>
+<!--Anime.js-->
+<script type="text/javascript">
+    anime({
         targets: '.innerHead',
         left: '240px',
         backgroundColor: 'rgba(76, 17, 125, 0.6);',
@@ -203,8 +306,9 @@
         direction: 'alternate',
         loop: true,
         easing: 'linear'
-      });</script>
+      });
+</script>
+
 </body>
 </html>
 
-<!-- Make a fried finder to pair up equal fighters to enter the thunder dome and fight
