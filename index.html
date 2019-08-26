@@ -5,115 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Exo|Orbitron&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/styles/main.css">
+
+<!--------------------------------CSS LINK--------------------------------->
+    <!-- <link rel="stylesheet" href="assets/styles/main.css"> -->
+<!--------------------------------CSS LINK--------------------------------->
+
     <title>Welcome to the Thunder Dome </title>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js"></script>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-
-<!-- <style>
-  body {
-    background-color: black;
-    font-family: 'Orbitron', sans-serif;
-}
-.img{
-  height:947px;
-  background-image: url("../images/synthGif.gif");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  margin: 0 20px 0 20px
-}
-.header {
-    height:947px;
-    text-align: center;
-    padding: 50px;
-    color: rgb(2, 200, 214)
-}
-.innerHead {
-    background-color: rgba(76, 17, 125, 0.6);
-    vertical-align: center;
-    padding: 100px;
-}
-
-.one {
-    position: relative;
-    width: 75px;
-    height: 75px;
-    margin: 20px;
-    display: inline-block;
-    background-color: rgba(76, 17, 125);
-}
-.two {
-  position: relative;
-  width: 75px;
-  height: 75px;
-  margin: 20px;
-  display: inline-block;
-  background-color: rgba(76, 17, 125);
-}
-.three{
-  position: relative;
-  width: 75px;
-  height: 75px;
-  margin: 20px;
-  display: inline-block;
-  background-color: rgba(76, 17, 125);
-}
-.four {
-  position: relative;
-  width: 75px;
-  height: 75px;
-  margin: 20px;
-  display: inline-block;
-  background-color: rgba(76, 17, 125);
-}
-
-/* CREATE COLUMBS */
-* {
-    box-sizing: border-box;
-  }
-  .row {
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
-    padding: 0 4px;
-    justify-content: center; 
-
-  }
-  .column {
-    -ms-flex: 50%; /* IE10 */
-    flex: 50%;
-    max-width: 50%;
-    padding: 0 4px;
-  }
-  
-  /* Responsive layout - makes a two column-layout instead of four columns */
-  @media screen and (max-width: 950px) {
-    .column {
-      -ms-flex: 100%;
-      flex: 100%;
-      max-width: 100%;
+<!--------------------------------CSS STYLE TAG--------------------------------->
+    <style>
+    html {
+      scroll-behavior: smooth;
     }
-  } 
-  
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 767px) {
-    .column {
-      -ms-flex: 100%;
-      flex: 100%;
-      max-width: 100%;
+    body {
+        background-color: #000000;
+        font-family: 'Orbitron', sans-serif;
     }
-    .three{
-      visibility: hidden;   
+    .img {
+      height:947px;
+      background-image: url("Assets/Images/synthGif.gif");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0 20px 0 20px
+    }
+    .header {
+        height:1200px;
+        text-align: center;
+        padding: 50px;
+        color: rgb(2, 200, 214)
+    }
+    .innerHead {
+        background-color: rgba(76, 17, 125, 0.6);
+        vertical-align: center;
+        padding: 100px;
+    }
+    #box {
+      margin: 100px 100px 0 100px;
+    }
+    .one {
+        border-radius: 100%;
+        position: relative;
+        width: 75px;
+        height: 75px;
+        margin: 20px;
+        display: inline-block;
+        background-color: rgba(76, 17, 125);
+    }
+    .two {
+      position: relative;
+      width: 75px;
+      height: 75px;
+      margin: 20px;
+      display: inline-block;
+      background-color: rgba(76, 17, 125);
+    }
+    .three {
+      border-radius: 100%;
+
+      position: relative;
+      width: 75px;
+      height: 75px;
+      margin: 20px;
+      display: inline-block;
+      background-color: rgba(76, 17, 125);
     }
     .four {
-      visibility: hidden;   
+      position: relative;
+      width: 75px;
+      height: 75px;
+      margin: 20px;
+      display: inline-block;
+      background-color: rgba(76, 17, 125);
     }
-  }
-</style> -->
+    .surveySection {
+      height:947px;
+      margin: 50px;
+    }
+    .surveyForm {
+      background-color: rgba(76, 17, 125, 0.6);
+      text-align: center;
+      padding:50px;
+    }
+    .radioQuestion {
+      color: rgb(2, 200, 214);
+      margin:50px;
+
+    }
+    .formLabel {
+      color: rgb(9, 255, 0)
+    }
+    /* CREATE COLUMBS */
+    * {
+        box-sizing: border-box;
+      }
+      .row {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap; /* IE10 */
+        flex-wrap: wrap;
+        padding: 0 4px;
+        justify-content: center; 
+
+      }
+      .column {
+        -ms-flex: 16.5%; /* IE10 */
+        flex: 16.5%;
+        max-width: 16.5%;
+        padding: 0 4px;
+      }
+
+
+      /* Responsive layout - makes a two column-layout instead of four columns */
+      @media screen and (max-width: 950px) {
+        .column {
+          -ms-flex: 100%;
+          flex: 100%;
+          max-width: 100%;
+        }
+      } 
+      
+      /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 767px) {
+        .column {
+          -ms-flex: 100%;
+          flex: 100%;
+          max-width: 100%;
+        }
+        .three{
+          visibility: hidden;   
+        }
+        .four {
+          visibility: hidden;   
+        }
+      }
+
+    </style>
+<!--------------------------------CSS STYLE TAG--------------------------------->
 
 </head>
 <body>
@@ -125,12 +157,26 @@
         <hr>
         <p>Before you enter, tell us about yourself.</p> 
         <p>Speak the truth or you may be matched with a far greater enemy</p>
-        <a href="#two"><button type="submit">Take the test then enter the DOME!</button></a>
+        <a href="#form"><button type="submit">Take the test then enter the DOME!</button></a>
     </div>
-
+<!--------------------------------SPINNING OBJECTS--------------------------------->
     <div class="row" id="box">
         <div class="column">
-            <div class="row">`
+            <div class="row">
+                <div class="one"></div>
+            </div>
+            <div class="row">
+                <div class="two"></div>
+            </div>
+            <div class="row">
+                <div class="three"></div>
+            </div>
+            <div class="row">
+                <div class="four"></div>
+            </div>           
+        </div>
+        <div class="column">
+            <div class="row">
                 <div class="one"></div>
             </div>
             <div class="row">
@@ -157,38 +203,98 @@
                 <div class="four"></div>
             </div>
         </div>
+        <div class="column">
+            <div class="row">
+                <div class="one"></div>
+            </div>
+                <div class="row">
+            <div class="two"></div>
+                </div>
+            <div class="row">
+                <div class="three"></div>
+            </div>
+            <div class="row">
+                <div class="four"></div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="row">
+                <div class="one"></div>
+            </div>
+                <div class="row">
+            <div class="two"></div>
+                </div>
+            <div class="row">
+                <div class="three"></div>
+            </div>
+            <div class="row">
+                <div class="four"></div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="row">
+                <div class="one"></div>
+            </div>
+                <div class="row">
+            <div class="two"></div>
+                </div>
+            <div class="row">
+                <div class="three"></div>
+            </div>
+            <div class="row">
+                <div class="four"></div>
+            </div>
+        </div>
     </div>
+<!--------------------------------SPINNING OBJECTS--------------------------------->
 </header>
 
-<div id="two" class="img"></div>
+
+
+<!--------------------------------THE QUESTIONS--------------------------------->
+<div class="img"></div>
 
 <div class="surveySection">
     <div class="surveyForm">
-        <form method="POST" role="form">
-            <div>
+        <form id="form" method="POST" role="form">
+            <div class="radioQuestion">
                 <label for="answer" class="formLabel">Name</label>
-                <input type="text" class="questions" id="name">
-            <div>
-            <div>
-                <label for="answer" class="formLabel">Question 1</label>
-                <input type="text" class="questions" id="q1">
-            </div>
-            <!-- <div>
-                <label for="answer" class="formLabel">Question 2</label>
-                <input type="text" class="questions" id="q2">
-            </div>
-            <div>
-                <label for="answer" class="formLabel">Question 3</label>
-                <input type="text" class="questions" id="q3">
-            </div>
-            <div>
-                <label for="answer" class="formLabel">Question 4</label>
-                <input type="text" class="questions" id="q4">
-            </div>
-            <div>
-                <label for="answer" class="formLabel">Question 5</label>
-                <input type="text" class="questions" id="q5">
-            </div> -->
+                <br>  
+                <hr>
+                <input type="input" name="name" id="name">
+            </div>   
+          
+            <div class="radioQuestion">
+                <label for="answer" class="formLabel">Name</label>
+                <br>  
+                <hr>
+                <input type="radio" name="gender" value="1"> Male
+                <input type="radio" name="gender" value="2"> Female
+                <input type="radio" name="gender" value="3"> Other
+            </div>    
+            
+            <div class="radioQuestion">
+                <label for="answer" class="formLabel">What Is Your Greatest Weapon?</label>
+                <br>  
+                <hr>
+                <input type="radio" name="weapon" value="1"> Fist
+                <input type="radio" name="weapon" value="2"> Sword
+                <input type="radio" name="weapon" value="3"> Gun
+                <input type="radio" name="weapon" value="4"> Nunchucks
+                <input type="radio" name="weapon" value="5"> Throwing Stars
+            </div>    
+
+            <div class="radioQuestion">
+                <label for="answer" class="formLabel">What Is The Best Animal</label>
+                <br>  
+                <hr>
+                <input type="radio" name="animal" value="1"> Cheeta
+                <input type="radio" name="animal" value="2"> Panther
+                <input type="radio" name="animal" value="3"> T-rex
+                <input type="radio" name="animal" value="4"> Dragon 
+                <input type="radio" name="animal" value="5"> leviathan
+            </div>   
+ 
         </form>
         <br>
         <div>
@@ -196,8 +302,13 @@
         </div>
     </div>
 </div>
+<!--------------------------------THE QUESTIONS--------------------------------->
+
 
 <h6><a href="">Show The Fighters</a></h6>
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="assets/scripts/anime.js"></script>  
 <!--Make Smooth Scroll-->
@@ -241,16 +352,17 @@
 </script>
 <!--Connect to Server-->
 <script type="text/javascript">
+
+
+
     
     $("#add").on("click", function(event) {
       event.preventDefault();
       let newPerson = {
-        // name: "bob",
-        // q1: 2
-          name:$("#name").val().trim(),
-          q1: $("#q1").val().trim()
-          // q2: $("#q2").val().trim(),
-          // q3: $("#q3").val().trim(),
+          name: $("#name").val().trim(),
+          q1: $("input[type='radio'][name='gender']:checked").val(),
+          q2: $("input[type='radio'][name='weapon']:checked").val(),
+          q3: $("input[type='radio'][name='animal']:checked").val(),
           // q4: $("#q4").val().trim(),
           // q5: $("#q5").val().trim(),
           // attack: 1000,
@@ -268,45 +380,66 @@
 </script>
 <!--Anime.js-->
 <script type="text/javascript">
-    anime({
-        targets: '.innerHead',
-        left: '240px',
-        backgroundColor: 'rgba(76, 17, 125, 0.6);',
-        borderRadius: ['50%', '0%'],
-        easing: 'easeInOutQuad'
-      });
-    
+
+
+
       anime({
         targets: '.one',
-        translateX: 250,
+        translateX: 200,
         direction: 'alternate',
         loop: true,
-        easing: 'linear'
-      })
-    
+        borderRadius: ['50%', '0%'],
+        rotate: {
+          value: 360,
+        },
+        easing:'linear',
+      });
+
       anime({
         targets: '.two',
-        translateX: -250,
+        translateX: -200,
         direction: 'alternate',
         loop: true,
-        easing: 'linear'
+        borderRadius: ['50%', '0%'],
+        rotate: {
+          value: 360,
+        },
+        easing:'linear',
       });
     
       anime({
         targets: '.three',
-        translateX: 250,
+        translateX: 200,
         direction: 'alternate',
         loop: true,
-        easing: 'linear'
+        borderRadius: ['50%', '0%'],
+        rotate: {
+          value: 360,
+        },
+        easing:'linear',
       });
     
       anime({
         targets: '.four',
-        translateX: -250,
+        translateX: -200,
         direction: 'alternate',
         loop: true,
-        easing: 'linear'
+        borderRadius: ['50%', '0%'],
+        rotate: {
+          value: 360,
+        },
+        easing:'linear',
+
       });
+
+
+  
+
+      // .add({ targets: '.one',  background: '#000000' }, 0)
+      // .add({ targets: '.one', translate: 270 }, 0);
+
+    
+ 
 </script>
 
 </body>

@@ -44,7 +44,7 @@ const people = [
   {
     routeName: "dangorden",
     name: "Dan Gorden",
-    q1:"5"
+    q1: 5
     // q2:3,
     // q3:5,
     // q4:1,

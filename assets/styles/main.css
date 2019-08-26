@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-    background-color: black;
+    background-color: #000000;
     font-family: 'Orbitron', sans-serif;
 }
 .img {
@@ -14,7 +14,7 @@ body {
   margin: 0 20px 0 20px
 }
 .header {
-    height:947px;
+    height:1200px;
     text-align: center;
     padding: 50px;
     color: rgb(2, 200, 214)
@@ -24,7 +24,11 @@ body {
     vertical-align: center;
     padding: 100px;
 }
+#box {
+  margin: 100px 100px 0 100px;
+}
 .one {
+    border-radius: 100%;
     position: relative;
     width: 75px;
     height: 75px;
@@ -41,6 +45,8 @@ body {
   background-color: rgba(76, 17, 125);
 }
 .three {
+  border-radius: 100%;
+
   position: relative;
   width: 75px;
   height: 75px;
@@ -65,10 +71,10 @@ body {
   text-align: center;
   padding:50px;
 }
-.questions {
+.radioQuestion {
+  color: rgb(2, 200, 214);
   margin:50px;
-  height: 40px;
-  width: 250px;
+
 }
 .formLabel {
   color: rgb(9, 255, 0)
@@ -87,9 +93,9 @@ body {
 
   }
   .column {
-    -ms-flex: 50%; /* IE10 */
-    flex: 50%;
-    max-width: 50%;
+    -ms-flex: 16.5%; /* IE10 */
+    flex: 16.5%;
+    max-width: 16.5%;
     padding: 0 4px;
   }
 
