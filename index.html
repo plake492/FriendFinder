@@ -45,7 +45,7 @@
         padding: 100px;
     }
     #box {
-      margin: 100px 100px 0 100px;
+      margin: 20px 150px 0 150px;
     }
     .one {
         border-radius: 100%;
@@ -75,6 +75,22 @@
       background-color: rgba(76, 17, 125);
     }
     .four {
+      position: relative;
+      width: 75px;
+      height: 75px;
+      margin: 20px;
+      display: inline-block;
+      background-color: rgba(76, 17, 125);
+    }
+    .five {
+      position: relative;
+      width: 75px;
+      height: 75px;
+      margin: 20px;
+      display: inline-block;
+      background-color: rgba(76, 17, 125);
+    }
+    .six {
       position: relative;
       width: 75px;
       height: 75px;
@@ -173,7 +189,13 @@
             </div>
             <div class="row">
                 <div class="four"></div>
-            </div>           
+            </div>       
+            <div class="row">
+                <div class="five"></div>
+            </div>  
+            <div class="row">
+                <div class="six"></div>
+            </div>      
         </div>
         <div class="column">
             <div class="row">
@@ -187,6 +209,12 @@
             </div>
             <div class="row">
                 <div class="four"></div>
+            </div>    
+            <div class="row">
+                <div class="five"></div>
+            </div> 
+            <div class="row">
+                <div class="six"></div>
             </div>           
         </div>
         <div class="column">
@@ -202,6 +230,12 @@
             <div class="row">
                 <div class="four"></div>
             </div>
+            <div class="row">
+                <div class="five"></div>
+            </div> 
+            <div class="row">
+                <div class="six"></div>
+            </div>    
         </div>
         <div class="column">
             <div class="row">
@@ -216,6 +250,12 @@
             <div class="row">
                 <div class="four"></div>
             </div>
+            <div class="row">
+                <div class="five"></div>
+            </div>  
+            <div class="row">
+                <div class="six"></div>
+            </div>   
         </div>
         <div class="column">
             <div class="row">
@@ -230,6 +270,12 @@
             <div class="row">
                 <div class="four"></div>
             </div>
+            <div class="row">
+                <div class="five"></div>
+            </div>  
+            <div class="row">
+                <div class="six"></div>
+            </div>   
         </div>
         <div class="column">
             <div class="row">
@@ -244,6 +290,12 @@
             <div class="row">
                 <div class="four"></div>
             </div>
+            <div class="row">
+                <div class="five"></div>
+            </div>  
+            <div class="row">
+                <div class="six"></div>
+            </div>   
         </div>
     </div>
 <!--------------------------------SPINNING OBJECTS--------------------------------->
@@ -257,20 +309,28 @@
 <div class="surveySection">
     <div class="surveyForm">
         <form id="form" method="POST" role="form">
+            <h2 style="color: rgb(2, 200, 214)">Two Men Enter, One Man Leaves</h2>
             <div class="radioQuestion">
                 <label for="answer" class="formLabel">Name</label>
                 <br>  
                 <hr>
-                <input type="input" name="name" id="name">
+                <input style="width: 300px; height:25px" type="input" name="name" id="name">
             </div>   
+
+            <div class="radioQuestion">
+                <label for="answer" class="formLabel">Add Image</label>
+                <br>  
+                <hr>
+                <input style="width: 300px; height:25px" type="input" name="image" id="image">
+            </div>    
           
             <div class="radioQuestion">
-                <label for="answer" class="formLabel">Name</label>
+                <label for="answer" class="formLabel">Gender</label>
                 <br>  
                 <hr>
-                <input type="radio" name="gender" value="1"> Male
-                <input type="radio" name="gender" value="2"> Female
-                <input type="radio" name="gender" value="3"> Other
+                <input type="radio" name="gender" value="Male"> Male
+                <input type="radio" name="gender" value="Female"> Female
+                <input type="radio" name="gender" value="Other"> Other
             </div>    
             
             <div class="radioQuestion">
@@ -305,12 +365,12 @@
 <!--------------------------------THE QUESTIONS--------------------------------->
 
 
-<h6><a href="">Show The Fighters</a></h6>
-
+<h6><a href="/all">Show The Fighters</a></h6>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="assets/scripts/anime.js"></script>  
+
 <!--Make Smooth Scroll-->
 <script type="text/javascript">
         // Select all links with hashes
@@ -353,18 +413,16 @@
 <!--Connect to Server-->
 <script type="text/javascript">
 
-
-
-    
     $("#add").on("click", function(event) {
       event.preventDefault();
       let newPerson = {
           name: $("#name").val().trim(),
-          q1: $("input[type='radio'][name='gender']:checked").val(),
-          q2: $("input[type='radio'][name='weapon']:checked").val(),
-          q3: $("input[type='radio'][name='animal']:checked").val(),
-          // q4: $("#q4").val().trim(),
-          // q5: $("#q5").val().trim(),
+          image: $("#image").val().trim(),
+          gender: $("input[type='radio'][name='gender']:checked").val(),
+          q1: $("input[type='radio'][name='weapon']:checked").val(),
+          q2: $("input[type='radio'][name='animal']:checked").val(),
+          // q3: $("#q4").val().trim(),
+          // q4: $("#q5").val().trim(),
           // attack: 1000,
           // defense: 5555
         } ;
@@ -380,8 +438,6 @@
 </script>
 <!--Anime.js-->
 <script type="text/javascript">
-
-
 
       anime({
         targets: '.one',
@@ -429,17 +485,32 @@
           value: 360,
         },
         easing:'linear',
-
       });
 
+      anime({
+        targets: '.five',
+        translateX: 200,
+        direction: 'alternate',
+        loop: true,
+        borderRadius: ['50%', '0%'],
+        rotate: {
+          value: 360,
+        },
+        easing:'linear',
+      });
 
-  
-
-      // .add({ targets: '.one',  background: '#000000' }, 0)
-      // .add({ targets: '.one', translate: 270 }, 0);
-
+      anime({
+        targets: '.six',
+        translateX: -200,
+        direction: 'alternate',
+        loop: true,
+        borderRadius: ['50%', '0%'],
+        rotate: {
+          value: 360,
+        },
+        easing:'linear',
+      });
     
- 
 </script>
 
 </body>

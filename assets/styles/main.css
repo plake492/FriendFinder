@@ -62,6 +62,22 @@ body {
   display: inline-block;
   background-color: rgba(76, 17, 125);
 }
+.five {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  margin: 20px;
+  display: inline-block;
+  background-color: rgba(76, 17, 125);
+}
+.six {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  margin: 20px;
+  display: inline-block;
+  background-color: rgba(76, 17, 125);
+}
 .surveySection {
   height:947px;
   margin: 50px;
