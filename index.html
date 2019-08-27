@@ -27,7 +27,7 @@
     }
     .img {
       height:947px;
-      background-image: url("Assets/Images/synthGif.gif");
+      /* background-image: url("synth.jpg"); */
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -139,19 +139,24 @@
       /* Responsive layout - makes a two column-layout instead of four columns */
       @media screen and (max-width: 950px) {
         .column {
-          -ms-flex: 100%;
-          flex: 100%;
-          max-width: 100%;
+          -ms-flex: 16.6%;
+          flex: 16.6%;
+          max-width: 16.6%;
         }
+        .innerHead {
+            padding: 10px 5px 25px 5px;
+        }
+        .header {
+            padding: 5px;
+        }
+        .surveySection {
+            margin: 5px;
+        }
+        
       } 
       
       /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
       @media screen and (max-width: 767px) {
-        .column {
-          -ms-flex: 100%;
-          flex: 100%;
-          max-width: 100%;
-        }
         .three{
           visibility: hidden;   
         }
@@ -304,7 +309,7 @@
 
 
 <!--------------------------------THE QUESTIONS--------------------------------->
-<div class="img"></div>
+<div style='background-image: url("synth.jpg");' class="img"></div>
 
 <div class="surveySection">
     <div class="surveyForm">
@@ -358,7 +363,7 @@
         </form>
         <br>
         <div>
-            <button type="submit" id="add">Enter The Dome</button>
+            <button type="submit" id="add"><a id="clickme" href="/matched">Enter The Dome</button></a>
         </div>
     </div>
 </div>
@@ -414,7 +419,7 @@
 <script type="text/javascript">
 
     $("#add").on("click", function(event) {
-      event.preventDefault();
+      // event.preventDefault();
       let newPerson = {
           name: $("#name").val().trim(),
           image: $("#image").val().trim(),
@@ -431,7 +436,7 @@
       $.post("/api/people", newPerson)
         .then(function(data) {
           console.log("add.html", data);
-          alert("Adding character...");
+          $('#clickme a').trigger('click');
         });
     });
 

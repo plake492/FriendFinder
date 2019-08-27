@@ -146,15 +146,15 @@
       /* Responsive layout - makes a two column-layout instead of four columns */
       @media screen and (max-width: 950px) {
         .column {
-            -ms-flex: 100%;
-            flex: 100%;
-            max-width: 100%;
+          -ms-flex: 100%;
+          flex: 100%;
+          max-width: 100%;
         }
         .innerHead {
-            padding: 10px 5px 25px 5px;
+            padding: 4px;
         }
         .header {
-            padding: 5px;
+          padding: 5px;
         }
         .surveySection {
             margin: 5px;
@@ -173,7 +173,7 @@
         -ms-flex: 100%; /* IE10 */
         flex: 100%;
         max-width: 100%;
-        padding: 0 4px;
+        padding: 10px 5px 25px 5px;
       }
         .three{
           visibility: hidden;   
@@ -193,6 +193,7 @@
         <div class="innerHead">
             <h1>ENTER THE THUNDER DOME</h1>
             <h2>Two Men Enter, One Man Leaves</h2>
+            <h2>You have been matched with: </h2>
         </div>
 
     <div id="character-section" class="list-group row"></div>
@@ -322,7 +323,12 @@
 <!--------------------------------SPINNING OBJECTS--------------------------------->
 </header>
             
+
+<h6><a href="/all">Show The Fighters</a></h6>
 <h6><a href="/">Back to the beginning</a></h6>
+
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/scripts/anime.js"></script>  
@@ -368,26 +374,35 @@
     <!--Connect to Server-->
    
     <script type="text/javascript">
+    const matchedArr = []
+    let qScore = 0
 
         $.get("/api/people", function(data) {
-
-        for (let i = 0; i < data.length; i++) {
-            data[i].qScore = parseInt(data[i].q1) + parseInt(data[i].q2)
-        }
-          for (let i = 0; i < data.length; i++) {
-            console.log(data[i]);
-            let listGroupItem = $("<div class='list-group-item column2'>");
-            listGroupItem = $(`
+        
+            const last = data[data.length -1]
+            for (let i = 0; i < 1; i++) {
+                let mostRecentPerson = {
+                    name: last.name,
+                    image: last.image,
+                    gender: last.gender
+                }
+                if (matchedArr.length < 2) {
+                    matchedArr.push(mostRecentPerson);
+                } else {
+                    return;
+                }
+        
+                mostRecentPerson = $(`
                 <div class='list-group-item column2'>
-                    <h2>Name: ${data[i].name}</h2> 
-                    <img style="width: 200px; height: 200px" src="${data[i].image}">
-                    <h3>Gender: ${data[i].gender}</h3>
-                    <h3>Answer Score: ${data[i].qScore}</h3>
+                    <h2>Name: ${last.name}</h2> 
+                    <img style="width: 200px; height: 200px" src="${last.image}">
+                    <h3>Gender: ${last.gender}</h3>
                 </div>
                 `)
 
-            $("#character-section").append(listGroupItem);
-          }
+                $("#character-section").append(mostRecentPerson);
+                console.log("MATCHED ARRAY: " + matchedArr[i].name)
+            }
         });
     </script>
     <!--Anime.js-->
