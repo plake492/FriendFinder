@@ -76,7 +76,7 @@ const people = [
     },
     {
       routeName: "sigourneyweaver",
-      gender: "Femal",
+      gender: "Female",
       image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/05/23/17/aliens-sigourney-weaver-.jpg",
       name: "Sigourney Weaver",
       q1:3,
