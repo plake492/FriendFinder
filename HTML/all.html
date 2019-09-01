@@ -33,6 +33,16 @@
       background-attachment: fixed;
       margin: 0 20px 0 20px
     }
+    footer{
+        background-color: rgba(76, 17, 125, 0.6);
+        vertical-align: center;
+        padding: 100px;    
+        margin: 50px
+      }
+    .footlink{
+      color:rgb(2, 200, 214);
+      padding: 0 20px 0 20px
+    }
     .header {
         /* height:1200px; */
         text-align: center;
@@ -326,9 +336,9 @@
     </div>
 <!--------------------------------SPINNING OBJECTS--------------------------------->
 
-
-            
-<h6><a href="/">Back to the beginning</a></h6>
+<footer class="row">
+    <h6><a class="footlink" href="/">Back to the beginning</a></h6>
+</footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/scripts/anime.js"></script>  
@@ -378,9 +388,10 @@
         $.get("/api/people", function(data) {
 
         for (let i = 0; i < data.length; i++) {
-            data[i].qScore = parseInt(data[i].q1) + parseInt(data[i].q2)
-            data[i].attack = data[i].qScore * 10;
-            data[i].defense = data[i].qScore * 2;
+            randomize = Math.floor(Math.random() * 5)
+            data[i].qScore = parseInt(data[i].q1) + parseInt(data[i].q2) + parseInt(data[i].q3) + parseInt(data[i].q4) + parseInt(data[i].q5);
+            data[i].attack = data[i].qScore * 10 + randomize;
+            data[i].defense = data[i].qScore * 2 + randomize;
         }
           for (let i = 0; i < data.length; i++) {
             console.log(data[i]);

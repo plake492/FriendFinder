@@ -25,6 +25,14 @@
         background-color: #000000;
         font-family: 'Orbitron', sans-serif;
     }
+    .img {
+      height:947px;
+      background-image: url("Assets/Images/synthGif.gif");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0 20px 0 20px
+    }
     footer{
         background-color: rgba(76, 17, 125, 0.6);
         vertical-align: center;
@@ -35,37 +43,29 @@
       color:rgb(2, 200, 214);
       padding: 0 20px 0 20px
     }
-    .img {
-      height:947px;
-      background-image: url("Assets/Images/synthGif.gif");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      margin: 0 20px 0 20px
-    }
     .header {
-        /* height:1200px; */
         text-align: center;
         padding: 50px;
         color: rgb(2, 200, 214)
     }
-    .innerHead {
-        background-color: rgba(76, 17, 125, 0.6);
-        vertical-align: center;
-        padding: 100px;
+    .battleField {
+      background-color: rgba(76, 17, 125, 0.5);
+      /* background-size: cover; */
+      padding: 8px;
+      margin: 50px 80px;
     }
     .players {
       margin: 0 100px 0 100px;
     }
     #box {
-      margin: 50spx 150px 0 150px;
+      margin: 20px 150px 0 150px;
     }
     .one {
         border-radius: 100%;
         position: relative;
         width: 75px;
         height: 75px;
-        margin: 20px;
+        margin: 20px 40px 20px 40px;
         display: inline-block;
         background-color: rgba(76, 17, 125);
     }
@@ -73,66 +73,36 @@
       position: relative;
       width: 75px;
       height: 75px;
-      margin: 20px;
+      margin: 20px 40px 20px 40px;
       display: inline-block;
       background-color: rgba(76, 17, 125);
     }
     .three {
       border-radius: 100%;
-
       position: relative;
       width: 75px;
       height: 75px;
-      margin: 20px;
-      display: inline-block;
+      margin: 50px 0 50px 0;
+      /* display: inline-block; */
       background-color: rgba(76, 17, 125);
     }
     .four {
       position: relative;
       width: 75px;
       height: 75px;
-      margin: 20px;
-      display: inline-block;
+      margin: 50px 0 50px 0;
+      /* display: inline-block; */
       background-color: rgba(76, 17, 125);
     }
-    .five {
+    #test {
       position: relative;
-      width: 75px;
-      height: 75px;
-      margin: 20px;
+      color: rgb(9, 255, 0);
+      width: 100px;
+      height: 100px;
+      margin: 100px 0 100px 0 ;      
       display: inline-block;
       background-color: rgba(76, 17, 125);
-    }
-    .six {
-      position: relative;
-      width: 75px;
-      height: 75px;
-      margin: 20px;
-      display: inline-block;
-      background-color: rgba(76, 17, 125);
-    }
-    .surveySection {
-      height:947px;
-      margin: 50px;
-    }
-    .surveyForm {
-      background-color: rgba(76, 17, 125, 0.6);
-      text-align: center;
-      padding:50px;
-    }
-    .radioQuestion {
-      color: rgb(2, 200, 214);
-      margin:50px;
-    }
-    .button {
-      background-color: rgb(9, 255, 0);
-      font-size: 16px;
-      padding: 20px;
-      margin: 40px 0 20px 0;
-      border:#000000;
-    }
-    .formLabel {
-      color: rgb(9, 255, 0)
+      font-size: 20px
     }
     /* CREATE COLUMBS */
     * {
@@ -145,7 +115,6 @@
         flex-wrap: wrap;
         padding: 0 4px;
         justify-content: center; 
-
       }
       .column {
         -ms-flex: 16.5%; /* IE10 */
@@ -154,9 +123,16 @@
         padding: 0 4px;
       }
       .column2 {
-        -ms-flex: 50%; /* IE10 */
-        flex: 50%;
-        max-width: 50%;
+        -ms-flex: 90%; /* IE10 */
+        flex: 90%;
+        max-width: 90%;
+        padding: 0 4px;
+        
+      }
+      .column3{
+        -ms-flex: 5%; /* IE5 */
+        flex: 5%;
+        max-width: 5%;
         padding: 0 4px;
       }
 
@@ -194,22 +170,10 @@
         max-width: 100%;
         padding: 10px 5px 25px 5px;
       }
-        .one {
-          visibility: hidden;   
-        }
-        .two {
-          visibility: hidden;   
-        }
-        .three {
+        .three{
           visibility: hidden;   
         }
         .four {
-          visibility: hidden;   
-        }
-        .five {
-          visibility: hidden;   
-        }
-        .six {
           visibility: hidden;   
         }
       }
@@ -221,156 +185,101 @@
 <body>
 
     <header class="header">
-        <div class="innerHead">
+        <!-- <div class="innerHead">
             <h1>ENTER THE THUNDER DOME</h1>
             <h2>Two Men Enter, One Man Leaves</h2>
             <h2>You have been matched with: </h2>
-            <hr style="margin:50px;">
-            <h1><a class="button" href="/attack">ENTER THE DOME</a></h1>
-        </div>
-    <div class="row "> 
-      <div id="personDisplay" class="row"></div>
-      <div id="matchedPerson" class="row"></div>
-    </div>   
-
-
-
-
-<!--------------------------------SPINNING OBJECTS--------------------------------->
-    <div class="row" id="box">
-                    <div class="column">
-                        <div class="row">
-                            <div class="one"></div>
-                        </div>
-                        <div class="row">
-                            <div class="two"></div>
-                        </div>
-                        <div class="row">
-                            <div class="three"></div>
-                        </div>
-                        <div class="row">
-                            <div class="four"></div>
-                        </div>       
-                        <div class="row">
-                            <div class="five"></div>
-                        </div>  
-                        <div class="row">
-                            <div class="six"></div>
-                        </div>      
-                    </div>
-                    <div class="column">
-                        <div class="row">
-                            <div class="one"></div>
-                        </div>
-                        <div class="row">
-                            <div class="two"></div>
-                        </div>
-                        <div class="row">
-                            <div class="three"></div>
-                        </div>
-                        <div class="row">
-                            <div class="four"></div>
-                        </div>    
-                        <div class="row">
-                            <div class="five"></div>
-                        </div> 
-                        <div class="row">
-                            <div class="six"></div>
-                        </div>           
-                    </div>
-                    <div class="column">
-                        <div class="row">
-                            <div class="one"></div>
-                        </div>
-                            <div class="row">
-                        <div class="two"></div>
-                            </div>
-                        <div class="row">
-                            <div class="three"></div>
-                        </div>
-                        <div class="row">
-                            <div class="four"></div>
-                        </div>
-                        <div class="row">
-                            <div class="five"></div>
-                        </div> 
-                        <div class="row">
-                            <div class="six"></div>
-                        </div>    
-                    </div>
-                    <div class="column">
-                        <div class="row">
-                            <div class="one"></div>
-                        </div>
-                            <div class="row">
-                        <div class="two"></div>
-                            </div>
-                        <div class="row">
-                            <div class="three"></div>
-                        </div>
-                        <div class="row">
-                            <div class="four"></div>
-                        </div>
-                        <div class="row">
-                            <div class="five"></div>
-                        </div>  
-                        <div class="row">
-                            <div class="six"></div>
-                        </div>   
-                    </div>
-                    <div class="column">
-                        <div class="row">
-                            <div class="one"></div>
-                        </div>
-                            <div class="row">
-                        <div class="two"></div>
-                            </div>
-                        <div class="row">
-                            <div class="three"></div>
-                        </div>
-                        <div class="row">
-                            <div class="four"></div>
-                        </div>
-                        <div class="row">
-                            <div class="five"></div>
-                        </div>  
-                        <div class="row">
-                            <div class="six"></div>
-                        </div>   
-                    </div>
-                    <div class="column">
-                        <div class="row">
-                            <div class="one"></div>
-                        </div>
-                            <div class="row">
-                        <div class="two"></div>
-                            </div>
-                        <div class="row">
-                            <div class="three"></div>
-                        </div>
-                        <div class="row">
-                            <div class="four"></div>
-                        </div>
-                        <div class="row">
-                            <div class="five"></div>
-                        </div>  
-                        <div class="row">
-                            <div class="six"></div>
-                        </div>   
-                    </div>
+        </div> -->
+    <div class="row">
+      <div class="one"></div>
+      <div class="one"></div>
+      <div class="one"></div>
+      <div class="one"></div>
+      <div class="one"></div>
+      <div class="one"></div>
+      <div class="one"></div>
+      <div class="one"></div>
+      <div class="one"></div>
     </div>
+
+
+      
+      <div class="row"> 
+          <div class="column3">
+              <div class="three"></div>
+              <div class="three"></div>
+              <div class="three"></div>
+              <div class="three"></div>
+              <div class="three"></div>
+              <div class="three"></div>
+              <div class="three"></div>
+            </div>
+          <div class="column2">
+              <div class="battleField">
+                  <div class="row"> 
+
+        <div id="personDisplay" class="row"></div>
+        <div id="matchedPerson" class="row"></div>
+        </div>  
+      <!-- <button id="test" style="color: lawngreen">TRY THIS</button> -->
+
+      <div class="row"> 
+
+          <div class="column">
+            <button id="test" id="butt" > 1 </button>
+          </div>
+          <div class="column">  
+            <button id="test" > 2 </button>
+          </div>
+          <div class="column">
+            <button id="test" > 3 </button>
+          </div>
+          <div class="column">
+            <button id="test" > 4 </button>
+          </div>
+          </div>  
+          </div>  
+        </div>
+        <div class="column3">
+            <div class="four"></div>
+            <div class="four"></div>
+            <div class="four"></div>
+            <div class="four"></div>
+            <div class="four"></div>
+            <div class="four"></div>
+            <div class="four"></div>
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="two"></div>
+        <div class="two"></div>
+        <div class="two"></div>
+        <div class="two"></div>
+        <div class="two"></div>
+        <div class="two"></div>
+        <div class="two"></div>
+        <div class="two"></div>
+        <div class="two"></div>
+      </div>
+   
+             
+<!--------------------------------SPINNING OBJECTS--------------------------------->
+  
 <!--------------------------------SPINNING OBJECTS--------------------------------->
 </header>
             
+
 <footer class="row">
-  <h6><a class="footlink" href="/all">Show The Fighters</a></h6>
-  <h6><a class="footlink" href="/">Back to the beginning</a></h6>
-</footer>
+    <h6><a class="footlink" href="/all">Show The Fighters</a></h6>
+    <h6><a class="footlink" href="/">Back to the beginning</a></h6>
+  </footer>
 
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="assets/scripts/anime.js"></script>  
+
   <!--Make Smooth Scroll **Pulled from Stack Overflow**-->
   <script type="text/javascript">
             // Select all links with hashes
@@ -412,11 +321,10 @@
   </script>
 
   <!--Connect to Server-->
-   
-  <script type="text/javascript">
-  
 
-    $.get("/api/people", function(data) { 
+  <script type="text/javascript">
+   
+   $.get("/api/people", function(data) { 
       let qScore = 0  
       const matchedArr = []
       const peopleArr = []
@@ -495,19 +403,55 @@
             `);
 
             $("#matchedPerson").append(matchedPerson);
+            fight(matchedArr)
             return
           };
         };
       });
+    match()
 
+  function fight(x) {
+    $("#test").on("click", function() {
+      $("#matchedPerson").empty()
+      console.log(x)
+      attack = x[0].attack / 10
+
+      x[1].health -= attack
+
+      matchedPerson = $(`
+              <div class="players">
+                <h2>Name: ${x[1].name}</h2> 
+                <img style="width: 200px; height: 200px" src="${x[1].image}">
+                <h3>Gender: ${x[1].gender}</h3>
+                <h3>Health: ${Math.floor(x[1].health)}</h3>
+                <h3>Attack Score: ${x[1].attack}</h3>
+                <h3>Defense Score: ${x[1].defense}</h3>
+              </div>
+              `);
+
+      $("#matchedPerson").append(matchedPerson);
+    })
+  };
   </script>
 
     <!--Anime.js-->
     <script type="text/javascript">
     
+          // anime({
+          //   targets: '#test',
+          //   translateX: 200,
+          //   direction: 'alternate',
+          //   loop: true,
+          //   borderRadius: ['50%', '0%'],
+          //   rotate: {
+          //     value: 360,
+          //   },
+          //   easing:'linear',
+          // });
+
           anime({
             targets: '.one',
-            translateX: 200,
+            translateX:180,
             direction: 'alternate',
             loop: true,
             borderRadius: ['50%', '0%'],
@@ -516,10 +460,10 @@
             },
             easing:'linear',
           });
-    
+
           anime({
             targets: '.two',
-            translateX: -200,
+            translateX: -180,
             direction: 'alternate',
             loop: true,
             borderRadius: ['50%', '0%'],
@@ -531,7 +475,7 @@
         
           anime({
             targets: '.three',
-            translateX: 200,
+            translateY: -180,
             direction: 'alternate',
             loop: true,
             borderRadius: ['50%', '0%'],
@@ -543,7 +487,7 @@
         
           anime({
             targets: '.four',
-            translateX: -200,
+            translateY: 180,
             direction: 'alternate',
             loop: true,
             borderRadius: ['50%', '0%'],
@@ -553,29 +497,6 @@
             easing:'linear',
           });
     
-          anime({
-            targets: '.five',
-            translateX: 200,
-            direction: 'alternate',
-            loop: true,
-            borderRadius: ['50%', '0%'],
-            rotate: {
-              value: 360,
-            },
-            easing:'linear',
-          });
-    
-          anime({
-            targets: '.six',
-            translateX: -200,
-            direction: 'alternate',
-            loop: true,
-            borderRadius: ['50%', '0%'],
-            rotate: {
-              value: 360,
-            },
-            easing:'linear',
-          });
         
     </script>
 </body>
