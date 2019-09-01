@@ -94,7 +94,7 @@
       /* display: inline-block; */
       background-color: rgba(76, 17, 125);
     }
-    #test {
+    .test {
       position: relative;
       color: rgb(9, 255, 0);
       width: 100px;
@@ -103,6 +103,20 @@
       display: inline-block;
       background-color: rgba(76, 17, 125);
       font-size: 20px
+    }
+    .battleScore {
+      background-color:rgba(76, 17, 125); 
+      padding: 20px;  
+      width: 60%; 
+      height: 120px;
+      margin: 20px 0 20px 0;
+    }
+    .button {
+      background-color: rgb(9, 255, 0);
+      font-size: 16px;
+      padding: 20px;
+      margin: 10px 0 50px 0;
+      border:#000000;
     }
     /* CREATE COLUMBS */
     * {
@@ -184,12 +198,7 @@
 </head>
 <body>
 
-    <header class="header">
-        <!-- <div class="innerHead">
-            <h1>ENTER THE THUNDER DOME</h1>
-            <h2>Two Men Enter, One Man Leaves</h2>
-            <h2>You have been matched with: </h2>
-        </div> -->
+  <header class="header">   
     <div class="row">
       <div class="one"></div>
       <div class="one"></div>
@@ -201,76 +210,70 @@
       <div class="one"></div>
       <div class="one"></div>
     </div>
-
-
-      
-      <div class="row"> 
-          <div class="column3">
-              <div class="three"></div>
-              <div class="three"></div>
-              <div class="three"></div>
-              <div class="three"></div>
-              <div class="three"></div>
-              <div class="three"></div>
-              <div class="three"></div>
-            </div>
-          <div class="column2">
-              <div class="battleField">
-                  <div class="row"> 
-
-        <div id="personDisplay" class="row"></div>
-        <div id="matchedPerson" class="row"></div>
-        </div>  
-      <!-- <button id="test" style="color: lawngreen">TRY THIS</button> -->
-
-      <div class="row"> 
-
-          <div class="column">
-            <button id="test" id="butt" > 1 </button>
-          </div>
-          <div class="column">  
-            <button id="test" > 2 </button>
-          </div>
-          <div class="column">
-            <button id="test" > 3 </button>
-          </div>
-          <div class="column">
-            <button id="test" > 4 </button>
-          </div>
-          </div>  
-          </div>  
-        </div>
-        <div class="column3">
-            <div class="four"></div>
-            <div class="four"></div>
-            <div class="four"></div>
-            <div class="four"></div>
-            <div class="four"></div>
-            <div class="four"></div>
-            <div class="four"></div>
-          </div>
-    </div>
-
-    <div class="row">
-        <div class="two"></div>
-        <div class="two"></div>
-        <div class="two"></div>
-        <div class="two"></div>
-        <div class="two"></div>
-        <div class="two"></div>
-        <div class="two"></div>
-        <div class="two"></div>
-        <div class="two"></div>
+    <div class="row"> 
+      <div class="column3">
+        <div class="three"></div>
+        <div class="three"></div>
+        <div class="three"></div>
+        <div class="three"></div>
+        <div class="three"></div>
+        <div class="three"></div>
+        <div class="three"></div>
       </div>
-   
-             
-<!--------------------------------SPINNING OBJECTS--------------------------------->
-  
-<!--------------------------------SPINNING OBJECTS--------------------------------->
-</header>
+      <div class="column2">
+        <div class="battleField">
+          <div class="row">
+            <div class="battleScore">
+              <div id="damageGiven"><h3>Make Your Choice</h3></div>
+              <div id="damageTaken"><h3>Suffer The Consequense</h3></div>
+            </div>
+          </div>
+          <div class="row"> 
+            <div id="personDisplay" class="row"></div>
+            <div id="matchedPerson" class="row"></div>
+          </div>  
+          <div id="afterBattle"></div>
+          <div class="row" id="battleField"> 
+            <div class="column">
+              <button class="test" id="fight1" > 1 </button>
+            </div>
+            <div class="column">  
+              <button class="test" id="fight2"> 2 </button>
+            </div>
+            <div class="column">
+              <button class="test" id="fight3"> 3 </button>
+            </div>
+            <div class="column">
+              <button class="test" id="fight4"> 4 </button>
+            </div>
+          </div>  
+        </div>  
+      </div>
+      <div class="column3">
+        <div class="four"></div>
+        <div class="four"></div>
+        <div class="four"></div>
+        <div class="four"></div>
+        <div class="four"></div>
+        <div class="four"></div>
+        <div class="four"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="two"></div>
+      <div class="two"></div>
+      <div class="two"></div>
+      <div class="two"></div>
+      <div class="two"></div>
+      <div class="two"></div>
+      <div class="two"></div>
+      <div class="two"></div>
+      <div class="two"></div>
+    </div>
+  </header>
             
 
-<footer class="row">
+  <footer class="row">
     <h6><a class="footlink" href="/all">Show The Fighters</a></h6>
     <h6><a class="footlink" href="/">Back to the beginning</a></h6>
   </footer>
@@ -354,6 +357,7 @@
             name: last.name,
             image: last.image,
             gender: last.gender,
+            health: last.health,
             attack: last.attack,
             defense: last.defense
           };
@@ -403,51 +407,111 @@
             `);
 
             $("#matchedPerson").append(matchedPerson);
-            fight(matchedArr)
+            attackNumber(matchedArr)
             return
           };
         };
       });
     match()
 
-  function fight(x) {
-    $("#test").on("click", function() {
-      $("#matchedPerson").empty()
-      console.log(x)
-      attack = x[0].attack / 10
-
-      x[1].health -= attack
-
-      matchedPerson = $(`
-              <div class="players">
-                <h2>Name: ${x[1].name}</h2> 
-                <img style="width: 200px; height: 200px" src="${x[1].image}">
-                <h3>Gender: ${x[1].gender}</h3>
-                <h3>Health: ${Math.floor(x[1].health)}</h3>
-                <h3>Attack Score: ${x[1].attack}</h3>
-                <h3>Defense Score: ${x[1].defense}</h3>
-              </div>
-              `);
-
-      $("#matchedPerson").append(matchedPerson);
+  function attackNumber(x) {
+    $("#fight1").on("click", function() {
+      let attack = 10
+      let defense = 40
+      fight(x, attack, defense)
     })
+    $("#fight2").on("click", function() {
+      let attack = 2      
+      let defense = 30
+      fight(x, attack, defense)
+    })
+    $("#fight3").on("click", function() {
+      let attack = 4
+      let defense = 20
+      fight(x, attack, defense)
+    })
+    $("#fight4").on("click", function() {
+      let attack = 6
+      let defense = 50
+      fight(x, attack, defense)
+    })
+  };
+  
+
+
+  function fight(x,y,z) {
+    $("#matchedPerson").empty();
+    $("#personDisplay").empty();
+    $("#damageGiven").empty();  
+    $("#damageTaken").empty();  
+
+    let strength =  Math.floor(x[0].attack / 5)
+    x[0].attack += strength
+
+    attack = Math.floor(x[0].attack / y);
+    defense = Math.floor(x[1].defense - z);
+
+    $("#damageGiven").append(`<h3>You Gave ${attack} Points In Damage To ${x[1].name}</h3>`)
+    $("#damageTaken").append(`<h3>You Recived ${defense} Points In Damage`)
+
+    x[1].health -= attack
+    x[0].health -= defense
+
+    matchedPerson = $(`
+      <div class="players">
+        <h2>Name: ${x[1].name}</h2> 
+        <img style="width: 200px; height: 200px" src="${x[1].image}">
+        <h3>Gender: ${x[1].gender}</h3>
+        <h3>Health: ${Math.floor(x[1].health)}</h3>
+        <h3>Attack Score: ${x[1].attack}</h3>
+        <h3>Defense Score: ${x[1].defense}</h3>
+      </div>
+    `);
+
+    $("#matchedPerson").append(matchedPerson);
+    
+    userPlayer = $(`
+      <div class="players">
+         <h2>Name: ${x[0].name}</h2> 
+          <img style="width: 200px; height: 200px" src="${x[0].image}">
+          <h3>Gender: ${x[0].gender}</h3>
+          <h3>Health: ${Math.floor(x[0].health)}</h3>
+          <h3>Attack Score: ${x[0].attack}</h3>
+          <h3>Defense Score: ${x[0].defense}</h3>
+        </div>
+      `);
+
+      $("#personDisplay").append(userPlayer);
+
+      if (x[1].health <= 0) {
+      $("#battleField").empty();
+      $("#afterBattle").append(`
+        <div class="row">
+          <h1 style="margin: 50px 0 30px 0">VICTORY: You Have Defated ${x[1].name}</h1>
+        </div>
+        <div class="row">
+          <a href="/" class="button" >Return To Processing</a>
+        </div>
+      `)
+      } else if (x[0].health <= 0) {
+        $("#battleField").empty();
+        $("#afterBattle").append(`
+        <div class="row">
+          <h1 style="margin: 50px 0 30px 0">DEFEAT: ${x[1].name} Has Defated You</h1>
+        </div>
+        <div class="row">
+          <a href="/" class="button" >Return To Processing</a>
+        </div>
+      `)
+      }
+    
+
+
   };
   </script>
 
     <!--Anime.js-->
     <script type="text/javascript">
-    
-          // anime({
-          //   targets: '#test',
-          //   translateX: 200,
-          //   direction: 'alternate',
-          //   loop: true,
-          //   borderRadius: ['50%', '0%'],
-          //   rotate: {
-          //     value: 360,
-          //   },
-          //   easing:'linear',
-          // });
 
           anime({
             targets: '.one',
