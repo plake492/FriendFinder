@@ -25,6 +25,9 @@
         background-color: #000000;
         font-family: 'Orbitron', sans-serif;
     }
+    hr{
+      width: 70%
+    }
     .img {
       height:947px;
       /* background-image: url("synth.jpg"); */
@@ -34,14 +37,13 @@
       margin: 0 20px 0 20px
     }
     .header {
-        height:1200px;
+        height:1300px;
         text-align: center;
         padding: 50px;
         color: rgb(2, 200, 214)
     }
     .innerHead {
         background-color: rgba(76, 17, 125, 0.6);
-        vertical-align: center;
         padding: 100px;
     }
     #box {
@@ -99,13 +101,16 @@
       background-color: rgba(76, 17, 125);
     }
     .surveySection {
-      height:947px;
+      /* height:947px; */
       margin: 50px;
     }
     .surveyForm {
       background-color: rgba(76, 17, 125, 0.6);
       text-align: center;
       padding:50px;
+    }
+    .userInput{
+      margin: 20px 0 0 0;
     }
     .radioQuestion {
       color: rgb(2, 200, 214);
@@ -114,6 +119,13 @@
     }
     .formLabel {
       color: rgb(9, 255, 0)
+    }
+   .button {
+      background-color: rgb(9, 255, 0);
+      font-size: 16px;
+      padding: 10px;
+      margin: 40px 0 0 0;
+      border:#000000;
     }
     /* CREATE COLUMBS */
     * {
@@ -152,12 +164,18 @@
         .surveySection {
             margin: 5px;
         }
+        .header {
+        height:500px;
+        text-align: center;
+        padding: 50px;
+        color: rgb(2, 200, 214)
+    }
         
       } 
       
       /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
       @media screen and (max-width: 767px) {
-        .three{
+        .three {
           visibility: hidden;   
         }
         .four {
@@ -178,131 +196,132 @@
         <hr>
         <p>Before you enter, tell us about yourself.</p> 
         <p>Speak the truth or you may be matched with a far greater enemy</p>
-        <a href="#form"><button type="submit">Take the test then enter the DOME!</button></a>
+        <a  href="#form"><button class="button" type="submit">Take the test then enter the DOME!</button></a>
     </div>
-<!--------------------------------SPINNING OBJECTS--------------------------------->
-    <div class="row" id="box">
-        <div class="column">
-            <div class="row">
-                <div class="one"></div>
-            </div>
-            <div class="row">
-                <div class="two"></div>
-            </div>
-            <div class="row">
-                <div class="three"></div>
-            </div>
-            <div class="row">
-                <div class="four"></div>
-            </div>       
-            <div class="row">
-                <div class="five"></div>
-            </div>  
-            <div class="row">
-                <div class="six"></div>
-            </div>      
-        </div>
-        <div class="column">
-            <div class="row">
-                <div class="one"></div>
-            </div>
-            <div class="row">
-                <div class="two"></div>
-            </div>
-            <div class="row">
-                <div class="three"></div>
-            </div>
-            <div class="row">
-                <div class="four"></div>
-            </div>    
-            <div class="row">
-                <div class="five"></div>
-            </div> 
-            <div class="row">
-                <div class="six"></div>
-            </div>           
-        </div>
-        <div class="column">
-            <div class="row">
-                <div class="one"></div>
-            </div>
-                <div class="row">
-            <div class="two"></div>
-                </div>
-            <div class="row">
-                <div class="three"></div>
-            </div>
-            <div class="row">
-                <div class="four"></div>
-            </div>
-            <div class="row">
-                <div class="five"></div>
-            </div> 
-            <div class="row">
-                <div class="six"></div>
-            </div>    
-        </div>
-        <div class="column">
-            <div class="row">
-                <div class="one"></div>
-            </div>
-                <div class="row">
-            <div class="two"></div>
-                </div>
-            <div class="row">
-                <div class="three"></div>
-            </div>
-            <div class="row">
-                <div class="four"></div>
-            </div>
-            <div class="row">
-                <div class="five"></div>
-            </div>  
-            <div class="row">
-                <div class="six"></div>
-            </div>   
-        </div>
-        <div class="column">
-            <div class="row">
-                <div class="one"></div>
-            </div>
-                <div class="row">
-            <div class="two"></div>
-                </div>
-            <div class="row">
-                <div class="three"></div>
-            </div>
-            <div class="row">
-                <div class="four"></div>
-            </div>
-            <div class="row">
-                <div class="five"></div>
-            </div>  
-            <div class="row">
-                <div class="six"></div>
-            </div>   
-        </div>
-        <div class="column">
-            <div class="row">
-                <div class="one"></div>
-            </div>
-                <div class="row">
-            <div class="two"></div>
-                </div>
-            <div class="row">
-                <div class="three"></div>
-            </div>
-            <div class="row">
-                <div class="four"></div>
-            </div>
-            <div class="row">
-                <div class="five"></div>
-            </div>  
-            <div class="row">
-                <div class="six"></div>
-            </div>   
-        </div>
-    </div>
+
+        <!--------------------------------SPINNING OBJECTS--------------------------------->
+      <div class="row" id="box">
+          <div class="column">
+              <div class="row">
+                  <div class="one"></div>
+              </div>
+              <div class="row">
+                  <div class="two"></div>
+              </div>
+              <div class="row">
+                  <div class="three"></div>
+              </div>
+              <div class="row">
+                  <div class="four"></div>
+              </div>       
+              <div class="row">
+                  <div class="five"></div>
+              </div>  
+              <div class="row">
+                  <div class="six"></div>
+              </div>      
+          </div>
+          <div class="column">
+              <div class="row">
+                  <div class="one"></div>
+              </div>
+              <div class="row">
+                  <div class="two"></div>
+              </div>
+              <div class="row">
+                  <div class="three"></div>
+              </div>
+              <div class="row">
+                  <div class="four"></div>
+              </div>    
+              <div class="row">
+                  <div class="five"></div>
+              </div> 
+              <div class="row">
+                  <div class="six"></div>
+              </div>           
+          </div>
+          <div class="column">
+              <div class="row">
+                  <div class="one"></div>
+              </div>
+                  <div class="row">
+              <div class="two"></div>
+                  </div>
+              <div class="row">
+                  <div class="three"></div>
+              </div>
+              <div class="row">
+                  <div class="four"></div>
+              </div>
+              <div class="row">
+                  <div class="five"></div>
+              </div> 
+              <div class="row">
+                  <div class="six"></div>
+              </div>    
+          </div>
+          <div class="column">
+              <div class="row">
+                  <div class="one"></div>
+              </div>
+                  <div class="row">
+              <div class="two"></div>
+                  </div>
+              <div class="row">
+                  <div class="three"></div>
+              </div>
+              <div class="row">
+                  <div class="four"></div>
+              </div>
+              <div class="row">
+                  <div class="five"></div>
+              </div>  
+              <div class="row">
+                  <div class="six"></div>
+              </div>   
+          </div>
+          <div class="column">
+              <div class="row">
+                  <div class="one"></div>
+              </div>
+                  <div class="row">
+              <div class="two"></div>
+                  </div>
+              <div class="row">
+                  <div class="three"></div>
+              </div>
+              <div class="row">
+                  <div class="four"></div>
+              </div>
+              <div class="row">
+                  <div class="five"></div>
+              </div>  
+              <div class="row">
+                  <div class="six"></div>
+              </div>   
+          </div>
+          <div class="column">
+              <div class="row">
+                  <div class="one"></div>
+              </div>
+                  <div class="row">
+              <div class="two"></div>
+                  </div>
+              <div class="row">
+                  <div class="three"></div>
+              </div>
+              <div class="row">
+                  <div class="four"></div>
+              </div>
+              <div class="row">
+                  <div class="five"></div>
+              </div>  
+              <div class="row">
+                  <div class="six"></div>
+              </div>   
+          </div>
+      </div>
 <!--------------------------------SPINNING OBJECTS--------------------------------->
 </header>
 
@@ -319,51 +338,96 @@
                 <label for="answer" class="formLabel">Name</label>
                 <br>  
                 <hr>
-                <input style="width: 300px; height:25px" type="input" name="name" id="name">
+                <input class="userInput" style="width: 300px; height:25px" type="input" name="name" id="name">
             </div>   
 
             <div class="radioQuestion">
                 <label for="answer" class="formLabel">Add Image</label>
                 <br>  
                 <hr>
-                <input style="width: 300px; height:25px" type="input" name="image" id="image">
+                <input class="userInput" style="width: 300px; height:25px" type="input" name="image" id="image">
             </div>    
           
             <div class="radioQuestion">
                 <label for="answer" class="formLabel">Gender</label>
                 <br>  
                 <hr>
-                <input type="radio" name="gender" value="Male"> Male
-                <input type="radio" name="gender" value="Female"> Female
-                <input type="radio" name="gender" value="Other"> Other
+                <div class="userInput">
+                  <input type="radio" name="gender" value="Male"> Male
+                  <input type="radio" name="gender" value="Female"> Female
+                  <input type="radio" name="gender" value="Other"> Other
+                </div>
             </div>    
             
             <div class="radioQuestion">
                 <label for="answer" class="formLabel">What Is Your Greatest Weapon?</label>
                 <br>  
                 <hr>
-                <input type="radio" name="weapon" value="1"> Fist
-                <input type="radio" name="weapon" value="2"> Sword
-                <input type="radio" name="weapon" value="3"> Gun
-                <input type="radio" name="weapon" value="4"> Nunchucks
-                <input type="radio" name="weapon" value="5"> Throwing Stars
+                <div class="userInput">
+                  <input type="radio" name="weapon" value="1"> Fist
+                  <input type="radio" name="weapon" value="2"> Sword
+                  <input type="radio" name="weapon" value="3"> Gun
+                  <input type="radio" name="weapon" value="4"> Nunchucks
+                  <input type="radio" name="weapon" value="5"> Throwing Stars
+                </div>
             </div>    
 
             <div class="radioQuestion">
                 <label for="answer" class="formLabel">What Is The Best Animal</label>
                 <br>  
                 <hr>
-                <input type="radio" name="animal" value="1"> Cheeta
-                <input type="radio" name="animal" value="2"> Panther
-                <input type="radio" name="animal" value="3"> T-rex
-                <input type="radio" name="animal" value="4"> Dragon 
-                <input type="radio" name="animal" value="5"> leviathan
+                <div class="userInput">
+                  <input type="radio" name="animal" value="1"> Cheeta
+                  <input type="radio" name="animal" value="2"> Panther
+                  <input type="radio" name="animal" value="3"> T-rex
+                  <input type="radio" name="animal" value="4"> Dragon 
+                  <input type="radio" name="animal" value="5"> leviathan
+                </div>
             </div>   
+
+            <div class="radioQuestion">
+                <label for="answer" class="formLabel">What Is Your Dream Job </label>
+                <br>  
+                <hr>
+                <div class="userInput">
+                  <input type="radio" name="job" value="1"> Head Chef
+                  <input type="radio" name="job" value="2"> Stock Broker
+                  <input type="radio" name="job" value="3"> Hitman
+                  <input type="radio" name="job" value="4"> Lifegaurd
+                  <input type="radio" name="job" value="5"> Miami Police Officer
+                </div>
+            </div>  
+
+            <div class="radioQuestion">
+                <label for="answer" class="formLabel">What Is Your Favoirite Vehicle</label>
+                <br>  
+                <hr>
+                <div class="userInput">
+                  <input type="radio" name="car" value="1"> Jeep Cherokee
+                  <input type="radio" name="car" value="2"> Porshe Turbo
+                  <input type="radio" name="car" value="3"> The Batmobile
+                  <input type="radio" name="car" value="4"> Pontiac Trans AM (KITT)
+                  <input type="radio" name="car" value="5"> Ford XB Falcon
+                </div>
+            </div>  
+
+            <div class="radioQuestion">
+                <label for="answer" class="formLabel">Where Would You Most Like To Live</label>
+                <br>  
+                <hr>
+                <div class="userInput">
+                  <input type="radio" name="place" value="1"> The Beach
+                  <input type="radio" name="place" value="2"> A Frozen Tundra 
+                  <input type="radio" name="place" value="3"> The Jungle 
+                  <input type="radio" name="place" value="4"> The Outback 
+                  <input type="radio" name="place" value="5"> Post Fallout Wastland 
+                </div>
+            </div>  
  
         </form>
         <br>
         <div>
-            <button type="submit" id="add"><a id="clickme" href="/matched">Enter The Dome</button></a>
+            <button class="button" type="submit" id="add"><a id="clickme" href="/matched">Enter The Dome</button></a>
         </div>
     </div>
 </div>
@@ -426,6 +490,9 @@
           gender: $("input[type='radio'][name='gender']:checked").val(),
           q1: $("input[type='radio'][name='weapon']:checked").val(),
           q2: $("input[type='radio'][name='animal']:checked").val(),
+          q3: $("input[type='radio'][name='job']:checked").val(),
+          q4: $("input[type='radio'][name='car']:checked").val(),
+          q5: $("input[type='radio'][name='place']:checked").val(),
           qScore: 0,
           attack: 0,
           defense: 0,

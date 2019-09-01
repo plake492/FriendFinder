@@ -44,6 +44,9 @@
         vertical-align: center;
         padding: 100px;
     }
+    .players {
+      margin: 0 100px 0 100px;
+    }
     #box {
       margin: 20px 150px 0 150px;
     }
@@ -195,7 +198,11 @@
             <h2>Two Men Enter, One Man Leaves</h2>
             <h2>You have been matched with: </h2>
         </div>
-    <div id="character-section" class="list-group row"></div>
+    <div class="row "> 
+      <div id="personDisplay" class="row"></div>
+      <div id="matchedPerson" class="row"></div>
+    </div>     
+
 <!--------------------------------SPINNING OBJECTS--------------------------------->
     <div class="row" id="box">
                     <div class="column">
@@ -329,10 +336,10 @@
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="assets/scripts/anime.js"></script>  
-    <!--Make Smooth Scroll-->
-    <script type="text/javascript">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="assets/scripts/anime.js"></script>  
+  <!--Make Smooth Scroll **Pulled from Stack Overflow**-->
+  <script type="text/javascript">
             // Select all links with hashes
         $('a[href*="#"]')
         // Remove links that don't actually link to anything
@@ -369,52 +376,124 @@
             }
           }
         })
-    </script>
-    <!--Connect to Server-->
+  </script>
+
+  <!--Connect to Server-->
    
-    <script type="text/javascript">
-    const matchedArr = []
+  <script type="text/javascript">
+  
     let qScore = 0
 
-        $.get("/api/people", function(data) {   
-        
-            for (let i = 0; i < data.length; i++) {
-                data[i].qScore = parseInt(data[i].q1) + parseInt(data[i].q2)
-                data[i].attack = data[i].qScore * 10;
-                data[i].defense = data[i].qScore * 2;
-            }
-            const last = data[data.length -1]
-            for (let i = 0; i < 1; i++) {
-                let mostRecentPerson = {
-                    name: last.name,
-                    image: last.image,
-                    gender: last.gender,
-                    attack: last.attack,
-                    defense: last.defense
-                }
-                if (matchedArr.length < 2) {
-                    matchedArr.push(mostRecentPerson);
-                } else {
-                    return;
-                }
-        
-                mostRecentPerson = $(`
-                <div class='list-group-item column2'>
-                    <h2>Name: ${last.name}</h2> 
-                    <img style="width: 200px; height: 200px" src="${last.image}">
-                    <h3>Gender: ${last.gender}</h3>
-                    <h3>Attack Score: ${last.attack}</h3>
-                    <h3>Defense Score: ${last.defense}</h3>
+    $.get("/api/people", function(data) {   
+      const matchedArr = []
+      const peopleArr = []
+      $("#personDisplay").empty()
+      $("#matchedPerson").empty()
 
 
-                </div>
-                `)
+        for (let i = 0; i < data.length - 1; i++) {     // Creat Attack / Defense based on user input 
+          randomize = Math.floor(Math.random() * 5)
+          data[i].qScore = parseInt(data[i].q1) + parseInt(data[i].q2);
+          data[i].attack = data[i].qScore * 10 + randomize;
+          data[i].defense = data[i].qScore * 5 + randomize;
+          peopleArr.push(data[i]);
+          console.log("PeOpLe:::: " + peopleArr[i].name);
+        };
 
-                $("#character-section").append(mostRecentPerson);
-                console.log("MATCHED ARRAY: " + matchedArr[i].name)
-            }
-        });
-    </script>
+        const last = data[data.length -1];
+
+        for (let i = 0; i < 1; i++) {
+          randomize = Math.floor(Math.random() * 5)
+          last.qScore = parseInt(last.q1) + parseInt(last.q2);
+          last.attack = last.qScore * 10 + randomize;
+          last.defense = last.qScore * 5 + randomize;
+          let mostRecentPerson = {
+            name: last.name,
+            image: last.image,
+            gender: last.gender,
+            attack: last.attack,
+            defense: last.defense
+          };
+          if (matchedArr.length < 2) {
+            matchedArr.push(mostRecentPerson);
+            console.log("Most recent array ARR:::: " + matchedArr[i].name);
+          } else {
+              return;
+          };
+              
+          mostRecentPerson = $(`
+            <div class="players">
+              <h2>Name: ${last.name}</h2> 
+              <img style="width: 200px; height: 200px" src="${last.image}">
+              <h3>Gender: ${last.gender}</h3>
+              <h3>Attack Score: ${last.attack}</h3>
+              <h3>Defense Score: ${last.defense}</h3>
+            </div>
+            `);
+
+          $("#personDisplay").append(mostRecentPerson);
+        }
+
+
+        for (let i = 0; i < peopleArr.length - 1; i++) {
+
+          const target = matchedArr[0].attack
+
+          console.log("LOOKING FOR" + target)
+
+          const attackMatch = peopleArr.reduce((prev , curr) => Math.abs(curr.attack - target) < Math.abs(prev.attack  - target) ? curr : prev);  
+
+          console.log("ATTACK MATCH: " + attackMatch.name)
+
+            if (matchedArr.length < 2) { 
+              matchedArr.push(attackMatch)
+              matchedPerson = $(`
+              <div class="players">
+                <h2>Name: ${matchedArr[1].name}</h2> 
+                <img style="width: 200px; height: 200px" src="${matchedArr[1].image}">
+                <h3>Gender: ${matchedArr[1].gender}</h3>
+                <h3>Attack Score: ${matchedArr[1].attack}</h3>
+                <h3>Defense Score: ${matchedArr[1].defense}</h3>
+              </div>
+              `);
+
+              $("#matchedPerson").append(matchedPerson);
+              return
+            };
+          // }
+
+    
+
+
+           
+          // } else if (peopleArr[i].attack === matchedArr[0].attack + 10 || peopleArr[i].attack === matchedArr[0].attack - 10) {
+          //   console.log("The Match is: " + peopleArr[i].name)
+          //   if (matchedArr.length < 2) {
+          //     matchedArr.push(peopleArr[i])
+          //     matchedPerson = $(`
+          //     <div class="players">
+          //       <h2>Name: ${matchedArr[1].name}</h2> 
+          //       <img style="width: 200px; height: 200px" src="${matchedArr[1].image}">
+          //       <h3>Gender: ${matchedArr[1].gender}</h3>
+          //       <h3>Attack Score: ${matchedArr[1].attack}</h3>
+          //       <h3>Defense Score: ${matchedArr[1].defense}</h3>
+          //     </div>
+          //     `);
+
+          //     $("#matchedPerson").append(matchedPerson);
+          //   };
+          // } 
+          // else {
+          //   $("#matchedPerson").append(`
+          //     <div>
+          //       <h2>There is no match</h2>
+          //     </div>
+          //   `); return
+          // };
+        };
+      });
+  </script>
+
     <!--Anime.js-->
     <script type="text/javascript">
     

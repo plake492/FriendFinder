@@ -5,7 +5,7 @@ const people = [
       gender: "male",
       image: "https://scontent-ort2-1.xx.fbcdn.net/v/t31.0-8/22792269_10215150326294956_4078608217278741823_o.jpg?_nc_cat=110&_nc_oc=AQmKAINK-iOKKc9bxU10ru-4gGfflBOS2BjQBgR7vlc3LrqDB4nWUxHEYL9Xz_91CUo&_nc_ht=scontent-ort2-1.xx&oh=ffe4614586c81a4e78aeb513589eed97&oe=5DD6320D",
       q1:2,
-      q2:4,
+      q2:2,
       qScore: 0,
       attack: 0,
       defense: 0
@@ -53,14 +53,25 @@ const people = [
       qScore: 0,
       attack: 0,
       defense: 0
+    },
+    {
+      routeName: "sigourneyweaver",
+      gender: "Femal",
+      image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/05/23/17/aliens-sigourney-weaver-.jpg",
+      name: "Sigourney Weaver",
+      q1: 3,
+      q2: 4,
+      qScore: 0,
+      attack: 0,
+      defense: 0
     }
   ];
   
-  for (let i = 0; i < people.length; i++) {
-      console.log(people[i])
-      people[i].qScore = people[i].q1 + people[i].q2;
-      people[i].attack = people[i].qScore * 10;
-      people[i].defense = people[i].qScore * 2;
-  }
+  // for (let i = 0; i < people.length; i++) {
+  //     console.log(people[i])
+  //     people[i].qScore = people[i].q1 + people[i].q2;
+  //     people[i].attack = people[i].qScore * 10;
+  //     people[i].defense = people[i].qScore * 2;
+  // }
 
   module.exports = people
