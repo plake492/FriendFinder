@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Exo|Orbitron&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Exo|Orbitron&display=swap" rel="stylesheet">
 
-<!--------------------------------CSS LINK--------------------------------->
-    <!-- <link rel="stylesheet" href="assets/styles/main.css"> -->
-<!--------------------------------CSS LINK--------------------------------->
+  <title>Welcome to the Thunder Dome </title>
 
-    <title>Welcome to the Thunder Dome </title>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js"></script>   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js"></script>   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <!--------------------------------CSS STYLE TAG--------------------------------->
-    <style>
+  <style>
     html {
       scroll-behavior: smooth;
     }
@@ -193,26 +189,24 @@
         }
       }
 
-    </style>
+  </style>
 <!--------------------------------CSS STYLE TAG--------------------------------->
 
 </head>
 <body>
 
-<header class="header">
-    <div class="innerHead">
-        <h1>ENTER THE THUNDER DOME</h1>
-        <h2>Two Men Enter, One Man Leaves</h2>
-    </div>
+<div class="header">
+  <div class="innerHead">
+    <h1>ENTER THE THUNDER DOME</h1>
+    <h2>Two Men Enter, One Man Leaves</h2>
+  </div>
+  <div id="character-section" class="list-group row"></div>
+</div>
 
-    <div id="character-section" class="list-group row"></div>
-
-</header>
-
-    <div style='background-image: url("https://img5.goodfon.com/wallpaper/nbig/4/3c/synth-retrowave-synthwave-fon-new-retro-wave-sintveiv-ret-41.jpg");' class="img"></div>
+<div style='background-image: url("https://img5.goodfon.com/wallpaper/nbig/4/3c/synth-retrowave-synthwave-fon-new-retro-wave-sintveiv-ret-41.jpg");' class="img"></div>
 
 <!--------------------------------SPINNING OBJECTS--------------------------------->
-    <div class="row" id="box">
+  <div class="row" id="box">
                     <div class="column">
                         <div class="row">
                             <div class="one"></div>
@@ -333,7 +327,7 @@
                             <div class="six"></div>
                         </div>   
                     </div>
-    </div>
+  </div>
 <!--------------------------------SPINNING OBJECTS--------------------------------->
 
 <footer class="row">
@@ -342,6 +336,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/scripts/anime.js"></script>  
+
     <!--Make Smooth Scroll-->
     <script type="text/javascript">
             // Select all links with hashes
@@ -381,8 +376,8 @@
           }
         })
     </script>
+    
     <!--Connect to Server-->
-   
     <script type="text/javascript">
 
         $.get("/api/people", function(data) {
@@ -411,6 +406,7 @@
           }
         });
     </script>
+
     <!--Anime.js-->
     <script type="text/javascript">
     
