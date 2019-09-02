@@ -1,16 +1,6 @@
 <div style="text-align:center;font-family: 'Orbitron', sans-serif;">
 <link href="https://fonts.googleapis.com/css?family=Exo|Orbitron&display=swap" rel="stylesheet">
-<style>
-    .one {
-        border-radius: 100%;
-        position: relative;
-        width: 75px;
-        height: 75px;
-        margin: 20px 40px 20px 40px;
-        display: inline-block;
-        background-color: rgba(76, 17, 125);
-    }
-</style>
+
 
 # FriendFinder - Thunder Dome
 
